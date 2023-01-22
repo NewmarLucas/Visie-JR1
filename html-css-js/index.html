@@ -23,55 +23,113 @@
       </a>
       <nav>
         <ul class="navigation-list">
-          <li><a target="_blank" href="https://google.com">Google</a></li>
-          <li><a target="_blank" href="https://visie.com.br">Visie</a></li>
-          <li><a target="_blank" href="https://github.com/">Github</a></li>
+          <li>
+            <a class="button" target="_blank" href="https://google.com">
+              Google
+            </a>
+          </li>
+          <li>
+            <a class="button" target="_blank" href="https://visie.com.br">
+              Visie
+            </a>
+          </li>
+          <li>
+            <a class="button" target="_blank" href="https://github.com/">
+              Github
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <article class="home-article">
+    <main class="home-main">
       <h1>Teste de HTML, CSS e JS</h1>
-      <fieldset>
-        <legend>Quem eu sou:</legend>
-        <p>Olá, me chamo Newmar! Moro no interior do MS.</p>
-        <p>
-          Trabalho com desenvolvimento de aplicações a quase dois anos. Tenho
-          proficiência nas seguintes tecnologias:
-        </p>
-        <ol>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JS/TS</li>
-          <li>Vue</li>
-          <li>React</li>
-          <li>React Native</li>
-        </ol>
-        <p>
-          A maior parte da minha jornada de desenvolvedor foi no lado do
-          front-end, mas também tenho um pouco de experiência em tecnologias
-          back-end, seja por trabalho ou estudo. Segue uma lista das tecnologias
-          back-end que eu trabalho (ou consigo "me virar"):
-        </p>
-        <dl>
-          <dt>Node</dt>
-          <dd>
-            Já participei do desenvolvimento de APIs utilizando Node com alguns
-            frameworks como o Express.
-          </dd>
-          <dt>Java</dt>
-          <dd>
-            Estudo Java para aprender um pouco mais sobre orientação a objetos,
-            e com foco em back-end.
-          </dd>
-          <dt>Python</dt>
-          <dd>
-            Estudo a menos tempo, mas consigo fazer bastante coisa por conta do
-            conhecimento de outras liguagens que eu tenho.
-          </dd>
-        </dl>
-      </fieldset>
-    </article>
+      <article>
+        <h3>HTML</h3>
+        <fieldset>
+          <legend>Sobre mim</legend>
+          <p>Olá, me chamo Newmar! Moro no interior do MS.</p>
+          <p>
+            Trabalho com desenvolvimento de aplicações a quase dois anos. Tenho
+            proficiência nas seguintes tecnologias:
+          </p>
+          <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS/TS</li>
+            <li>Vue</li>
+            <li>React</li>
+            <li>React Native</li>
+          </ol>
+          <p>
+            A maior parte da minha jornada de desenvolvedor foi no lado do
+            front-end, mas também tenho um pouco de experiência em tecnologias
+            back-end, seja por trabalho ou estudo. Segue uma lista das
+            tecnologias back-end que eu trabalho (ou consigo "me virar"):
+          </p>
+          <dl>
+            <dt>Node</dt>
+            <dd>
+              Já participei do desenvolvimento de APIs utilizando Node com
+              alguns frameworks como o Express.
+            </dd>
+            <dt>Java</dt>
+            <dd>
+              Estudo Java para aprender um pouco mais sobre orientação a
+              objetos, e com foco em back-end.
+            </dd>
+            <dt>Python</dt>
+            <dd>
+              Estudo a menos tempo, mas consigo fazer bastante coisa por conta
+              do conhecimento de outras liguagens que eu tenho.
+            </dd>
+          </dl>
+        </fieldset>
+      </article>
+
+      <section>
+        <h2 style="margin-top: 30px">JS</h2>
+        <form>
+          <div class="form-container">
+            <div class="input-container">
+              <label>Vendedor</label>
+              <input
+                type="text"
+                id="seller"
+                placeholder="José Silva"
+                required
+              />
+            </div>
+            <div class="input-container">
+              <label>Total vendido</label>
+              <input
+                type="text"
+                inputmode="numeric"
+                pattern="\d*"
+                placeholder="R$ 150"
+                required
+              />
+            </div>
+            <div class="input-container">
+              <label>Data da venda</label>
+              <input type="date" id="date" required />
+            </div>
+          </div>
+          <input class="button" type="submit" value="Cadastrar venda" />
+        </form>
+      </section>
+
+      <!-- <section class="cards-container">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </section> -->
+    </main>
     <script src="./index.js"></script>
   </body>
 </html>
