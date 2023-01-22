@@ -51,6 +51,14 @@ header {
   margin: 5px 0;
 }
 
+.home-article fieldset {
+  border-radius: 5px;
+}
+
+.home-article fieldset legend {
+  padding: 0 5px;
+}
+
 .navigation-list {
   display: flex;
   gap: 5px;
