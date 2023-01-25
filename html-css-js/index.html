@@ -89,7 +89,7 @@
 
       <section>
         <h2 style="margin-top: 30px">JS</h2>
-        <form>
+        <form onsubmit="handleAddSale()">
           <div class="form-container">
             <div class="input-container">
               <label>Vendedor</label>
@@ -105,6 +105,7 @@
               <input
                 type="text"
                 inputmode="numeric"
+                id="amount"
                 pattern="\d*"
                 placeholder="R$ 150"
                 required
@@ -119,16 +120,19 @@
         </form>
       </section>
 
-      <!-- <section class="cards-container">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-      </section> -->
+      <section style="margin-top: 25px">
+        <h2>Vendas</h2>
+        <p>
+          Valor médio das vendas:
+          <span id="sales-average">R$ 0,00</span>
+        </p>
+        <div id="cards-container" class="cards-container">
+          <p>Não há vendas</p>
+        </div>
+        <button style="margin-top: 25px" class="button" onclick="clearSales()">
+          Limpar vendas
+        </button>
+      </section>
     </main>
     <script src="./index.js"></script>
   </body>
