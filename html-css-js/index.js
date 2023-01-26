@@ -4,10 +4,22 @@ const [
   date,
   cardsContainer,
   salesAverage,
-] = ['seller', 'amount', 'date', 'cards-container', 'sales-average'].map(item => document.getElementById(item))
+  coords,
+  currentDate,
+] = [
+  'seller',
+  'amount',
+  'date',
+  'cards-container',
+  'sales-average',
+  'coords',
+  'currentDate',
+].map(item => document.getElementById(item))
 
 window.addEventListener('load', () => {
   renderSalesCards()
+  getLocation()
+  getCurrentDate()
 })
 
 function renderSalesCards() {
@@ -76,4 +88,29 @@ function formatCurrency(value) {
     style: 'currency',
     currency: 'BRL',
   })
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition)
+  } else {
+    coords.innerHTML = null
+  }
+}
+
+function showPosition(position) {
+  const html = `
+    As coordenadas da Localização atual é: <br>
+    Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}
+  `
+  coords.innerHTML = html
+}
+
+function getCurrentDate() {
+  const today = new Date()
+  const yyyy = today.getFullYear()
+  const mm = today.getMonth() + 1
+  const dd = today.getDate()
+
+  currentDate.innerHTML = `Hoje é: ${('0' + dd).slice(-2)}/${('0' + mm).slice(-2)}/${yyyy}`
 }
