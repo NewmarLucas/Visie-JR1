@@ -93,7 +93,7 @@
           <div id="coords"></div>
           <div id="currentDate"></div>
         </div>
-        <form onsubmit="handleAddSale()">
+        <form onsubmit="handleAddSale(event)">
           <div class="form-container">
             <div class="input-container">
               <label>Vendedor</label>
@@ -110,7 +110,6 @@
                 type="text"
                 inputmode="numeric"
                 id="amount"
-                pattern="\d*"
                 placeholder="R$ 150"
                 required
               />

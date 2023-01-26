@@ -48,6 +48,7 @@ header {
   border: none;
   height: min-content;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .form-container {

@@ -1,4 +1,5 @@
 const [
+  form,
   seller,
   amount,
   date,
@@ -7,6 +8,7 @@ const [
   coords,
   currentDate,
 ] = [
+  'form',
   'seller',
   'amount',
   'date',
@@ -17,6 +19,7 @@ const [
 ].map(item => document.getElementById(item))
 
 window.addEventListener('load', () => {
+  date.max = new Date().toLocaleDateString('en-ca')
   renderSalesCards()
   getLocation()
   getCurrentDate()
@@ -48,17 +51,25 @@ function formatDate(date) {
   return `${day}/${month}/${year}`
 }
 
-function handleAddSale() {
+function handleAddSale(e) {
+  e.preventDefault()
+
   const sale = {
     seller: seller.value.trim(),
     amount: Number(amount.value * 100),
     date: formatDate(date.value),
     id: Date.now(),
   }
+  const isValid = validateFields(sale.seller, sale.amount)
+  if (!isValid) return
+
   const oldValue = getSales()
 
   localStorage.setItem('sales', JSON.stringify([...oldValue, sale]))
   renderSalesCards()
+  seller.value = ''
+  amount.value = ''
+  date.value = ''
 }
 
 function deleteSale(id) {
@@ -113,4 +124,25 @@ function getCurrentDate() {
   const dd = today.getDate()
 
   currentDate.innerHTML = `Hoje é: ${('0' + dd).slice(-2)}/${('0' + mm).slice(-2)}/${yyyy}`
+}
+
+function validateFields(seller, amount) {
+  const errors = []
+  const isValidSeller = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/.test(seller)
+  const isValidAmount = /^[0-9]+$/.test(amount)
+
+  if (!isValidSeller) {
+    errors.push('Vendedor')
+  }
+
+  if (!isValidAmount) {
+    errors.push('Total vendido')
+  }
+
+  if (errors.length) {
+    alert(`Há erros no(s) seguinte(s) campo(s): ${errors.join(', ')}`)
+    return false
+  }
+
+  return true
 }
