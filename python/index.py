@@ -34,10 +34,10 @@ print(f"\n{'=' * 60}\n")
 # partir da versão 3.7). Seus valores podem ser alterados, e ele não aceita chaves duplicadas.
 dict_example = {
     "name": "Newmar Lucas",
-    "age:": 22,
+    "age": 22,
     "is_male": True
 }
-print(f"Exemplo de Dicionario: {dict_example}")  # {'name': 'Newmar Lucas', 'age:': 22, 'is_male': True}
+print(f"Exemplo de Dicionario: {dict_example}")  # {'name': 'Newmar Lucas', 'age': 22, 'is_male': True}
 print(f"Exemplo de funcoes com dict:\n")
 print(f"Tamanho(len(my_dict)): {len(dict_example)}")
 print(f"Pegar todas as chaves(my_dict.keys()): {dict_example.keys()}")
@@ -48,8 +48,13 @@ dict_example.update(name="Jose")
 print(f"Atualizar valores(my_dict.update(name='Jose')): {dict_example}")
 print(f"\n{'=' * 60}\n")
 
+if "name" not in dict_example or ("age" in dict_example and dict_example["age"] == 22):
+    print("Exemplo de operadores lógicos.")
+    print(f"\n{'=' * 60}\n")
+
 
 """ Utilização de operadores, estrutura de controle, funções e classe """
+
 questions = [
     Question("Qual a cor do sol?\na) Branco\nb) Amarelo\nc) Laranja\n", "a"),
     Question("\n\nEm que ano nasceu o Neymar?\na) 1990\nb) 1991\nc) 1992\n", "c"),
